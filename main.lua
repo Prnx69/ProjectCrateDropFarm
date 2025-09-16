@@ -38,6 +38,19 @@ if typeof(Name) == "string" then
     end
 end
 
+local allowedPlaces = {
+    [606849621] = true,
+    [17190407811] = true
+}
+
+local placeId = game.PlaceId
+
+if not allowedPlaces[placeId] then
+    game:GetService("Players").LocalPlayer:Kick(
+        "This game is not supported. Script supported only Jailbreak!"
+    )
+end
+
 -- Load game (if not loaded)
 
 while not game:IsLoaded() do
